@@ -24,9 +24,11 @@ function defineStyles(answer, answerCheck) {
 export default function Question(props) {
   const Answers = props.answers.map((answer) => {
     const styles = defineStyles(answer, props.answerCheck);
+
     return (
       <p
         className="answer"
+        key={answer.id}
         style={styles}
         onClick={
           !props.answerCheck ? () => props.selectAnswer(answer.id) : null

@@ -1,5 +1,4 @@
 #root {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,4 +122,25 @@
 
   font-size: 13px;
   margin-top: 0px;
+}
+
+@media screen and (max-width: 856px) {
+  .answers-wrap {
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 15px 0px;
+  }
+  .answer {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .answers-wrap {
+    flex-direction: column;
+  }
+  .answer {
+    max-width: 250px;
+  }
 }
