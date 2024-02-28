@@ -41,7 +41,7 @@ function App() {
         });
       });
     } catch (error) {
-      console.error("An error occured while updating state", error);
+      console.error("An error occured while updating state:", error);
     }
   }
 
@@ -90,25 +90,30 @@ function App() {
     });
     return (
       <>
-        <div className="circle-sm"></div>
-        <div className="questions-wrap">{Questions}</div>
-        {selectNotification && (
-          <p className="notification">Please select answers to all questions</p>
-        )}
-        {answerCheck ? (
-          <div className="score-wrap">
-            <h3>You answerd {score}/5 correct answers </h3>
-            <button className="start-btn new-game-btn" onClick={startGame}>
-              Play Again
-            </button>
-          </div>
-        ) : (
-          <button className="start-btn game-btn" onClick={checkAnswers}>
-            Check answers
-          </button>
-        )}
+        <div className="container">
+          <div className="circle-sm circle-first"></div>
 
-        <div className="circle-sm circle-second"></div>
+          <div className="questions-wrap">{Questions}</div>
+          {selectNotification && (
+            <p className="notification">
+              Please select answers to all questions
+            </p>
+          )}
+          {answerCheck ? (
+            <div className="score-wrap">
+              <h3>You answerd {score}/5 correct answers </h3>
+              <button className="start-btn new-game-btn" onClick={startGame}>
+                Play Again
+              </button>
+            </div>
+          ) : (
+            <button className="start-btn game-btn" onClick={checkAnswers}>
+              Check answers
+            </button>
+          )}
+
+          <div className="circle-sm circle-second"></div>
+        </div>
       </>
     );
   }
